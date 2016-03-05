@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require './lib/alba_habla'
+
+command = nil
+
+ah = AlbaHabla.new(File.expand_path(File.dirname(__FILE__)) + '/')
+
+while command != 'bye'
+  print "What shall I say? "
+  command = gets.chomp
+  ah.process_command(command)
+  puts ":)"
+end
