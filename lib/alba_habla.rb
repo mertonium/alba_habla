@@ -1,15 +1,32 @@
 class AlbaHabla
   attr_reader :voice
 
-  DEFAULT_VOICE = "Fiona"
-#DEFAULT_VOICE = "Tessa"
+  DEFAULT_VOICES = {
+    'say' => 'Fiona',
+    'espeak' => 'en-westindies',
+  }
+
   def initialize(book_path)
-    @voice = DEFAULT_VOICE
+    @voice = DEFAULT_VOICES[executable]
     @book_path = book_path
   end
 
+  def executable
+    @executable ||= %w[espeak say].reject { |ex|
+      `which #{ex}` == ''
+    }.first
+  end
+
+  def cli_options
+    "-v #{voice}"
+  end
+
+  def talk_command
+    "#{executable} #{cli_options}"
+  end
+
   def talk(string)
-    `say --voice #{voice} "#{string}"`
+    `#{talk_command} "#{string}"`
   end
 
   def books
