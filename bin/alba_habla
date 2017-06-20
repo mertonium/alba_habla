@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+require 'io/console'
+require 'alba_habla'
+
+ah = AlbaHabla.new(File.expand_path(File.dirname(__FILE__)) + '/books/')
+
+command = nil
+command_history = []
+
+# Main program loop
+while command != 'bye'
+  print 'What shall I say? '
+  command = gets.chomp
+  command_history.push command
+  ah.process_command(command)
+end
+
+puts 'COMMAND HISTORY'
+command_history.each { |h| puts h }
