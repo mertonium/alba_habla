@@ -1,10 +1,10 @@
 # Alba Habla
 
-_A fun little wrapper around you OS's speech synthesizer_
+_A fun little wrapper around your OS's speech synthesizer_
 
 ## Installation
 
-```ruby
+```bash
 $ git clone git@github.com:mertonium/alba_habla.git
 $ cd alba_habla
 $ gem build alba_habla.gemspec
