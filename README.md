@@ -4,16 +4,16 @@ _A fun little wrapper around your OS's speech synthesizer_
 
 ## Installation
 
-```bash
-$ git clone git@github.com:mertonium/alba_habla.git
-$ cd alba_habla
-$ gem build alba_habla.gemspec
-$ gem install ./alba_habla-0.0.1.gem
+Your system will need either `say` or [`espeak`](https://en.wikipedia.org/wiki/ESpeakNG) installed (if you're on a Mac, `say` should already be installed).
+```
+$ gem install alba_habla
 ```
 
 ## Execution
 
-```bash
+```
 $ alba_habla
+What shall I say? 
 ```
 
+**Note:** to exit the program, just say "bye".
