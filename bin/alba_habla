@@ -2,7 +2,8 @@
 require 'io/console'
 require 'alba_habla'
 
-ah = AlbaHabla.new(File.expand_path(File.dirname(__FILE__)) + '/books/')
+cli_options = AlbaHabla::Cli.parse(ARGV)
+ah = AlbaHabla::Commands.new(cli_options[:book_path])
 
 command = nil
 command_history = []
