@@ -8,8 +8,8 @@ module AlbaHabla
       'espeak' => 'en-westindies',
     }.freeze
 
-    def initialize(book_path)
-      @voice = DEFAULT_VOICES[executable]
+    def initialize(book_path, voice = nil)
+      @voice = voice || DEFAULT_VOICES[executable]
       @book_path = book_path
     end
 

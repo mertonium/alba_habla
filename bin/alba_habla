@@ -3,7 +3,7 @@ require 'io/console'
 require 'alba_habla'
 
 cli_options = AlbaHabla::Cli.parse(ARGV)
-ah = AlbaHabla::Commands.new(cli_options[:book_path])
+ah = AlbaHabla::Commands.new(cli_options[:book_path], cli_options[:voice])
 
 command = nil
 command_history = []
