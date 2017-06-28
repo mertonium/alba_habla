@@ -5,7 +5,7 @@ module AlbaHabla
 
     DEFAULT_VOICES = {
       'say' => 'Fiona',
-      'espeak' => 'en-westindies'
+      'espeak' => 'en-westindies',
     }.freeze
 
     def initialize(book_path)
@@ -48,7 +48,7 @@ module AlbaHabla
         'cat' => 'the_cat_in_the_hat.txt',
         'ladybird' => 'what_the_ladybird_heard.txt',
         'ladybird2' => 'what_the_lady_bird_heard_next.txt',
-        'fox' => 'fox_in_socks.txt'
+        'fox' => 'fox_in_socks.txt',
       }
     end
 

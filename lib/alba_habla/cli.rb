@@ -4,7 +4,7 @@ module AlbaHabla
   # Class used to parse command line arguments
   class Cli
     DEFAULT_OPTIONS = {
-      book_path: ''
+      book_path: '',
     }.freeze
 
     def self.parse(args)
@@ -13,7 +13,7 @@ module AlbaHabla
       opt_parser = OptionParser.new do |opts|
         opts.banner = 'Usage: alba_habla [options]'
 
-        opts.on('--books=BOOK_PATH', 'Path to folder with book files') do |bp|
+        opts.on('-bBOOK_PATH', '--books=BOOK_PATH', 'Path to folder with book files') do |bp|
           options[:book_path] = bp.end_with?('/') ? bp : "#{bp}/"
         end
       end
