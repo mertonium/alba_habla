@@ -42,6 +42,8 @@ module AlbaHabla
       `#{talk_command} "#{string}"`
     end
 
+    # Convenience mapping of a few books.
+    # i.e. typing "read sam" is the same as "read green_eggs_and_ham.txt"
     def books
       {
         'sam' => 'green_eggs_and_ham.txt',
@@ -50,6 +52,13 @@ module AlbaHabla
         'ladybird2' => 'what_the_lady_bird_heard_next.txt',
         'fox' => 'fox_in_socks.txt',
       }
+    end
+
+    def book_file(book_name)
+      File.join(
+        @book_path,
+        books.key?(book_name) ? books[book_name] : book_name
+      )
     end
 
     def word_bag
@@ -65,8 +74,8 @@ module AlbaHabla
     end
 
     def read(book_name)
-      if books.key? book_name
-        IO.foreach(@book_path + books[book_name]) do |line|
+      if File.exist?(book_file(book_name))
+        IO.foreach(book_file(book_name)) do |line|
           puts line
           talk line.delete('"')
         end
