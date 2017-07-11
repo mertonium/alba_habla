@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name = 'alba_habla'
   s.version = AlbaHabla::VERSION
   s.executables << 'alba_habla'
-  s.date = '2017-06-28'
+  s.date = '2017-07-11'
   s.summary = 'Type something, read it back.'
   s.description = 'A simple little program that reads back what you type.'
   s.authors = %w[Mertonium]
