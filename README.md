@@ -2,7 +2,7 @@
 
 _A fun little wrapper around your OS's speech synthesizer_
 
-Alba Habla simply repeats what you type through your local speech synthesizer. It was originally made as a "game" for a 2 year old named Alba :)
+Alba Habla simply repeats what you type through your local speech synthesizer. It was originally made as a "game" for a 2 year old named Alba :) ([backstory here](https://www.mertonium.com/alba-habla))
 
 ```
 $ alba_habla
